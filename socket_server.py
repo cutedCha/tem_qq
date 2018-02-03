@@ -13,9 +13,8 @@ class server_sw() :
         while True :
             try :
                 context = self.s.recv(1000)
-                try :
-                    for item in session_array :
-                        item.send(context)#懒得写了甭管它死的活的统统循环一遍
+                for item in session_array :
+                    item.send(context)#懒得写了甭管它死的活的统统循环一遍
                 #print(context.decode('utf-8'))
             except Exception :
                 print('有人离开的聊天室')
